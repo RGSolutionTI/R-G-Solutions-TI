@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>R&G Solutions TI | Soporte Gamer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050816;
+    color:white;
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+}
+
+/* Fondo animado */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at top left,#00ffff33,transparent 30%),
+    radial-gradient(circle at bottom right,#ff00ff33,transparent 30%);
+    z-index:-1;
+}
+
+/* NAVBAR */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+    background:#00000066;
+    border-bottom:1px solid #00ffff44;
+}
+
+.logo{
+    font-family:'Orbitron',sans-serif;
+    font-size:2rem;
+    font-weight:900;
+    color:#00ffff;
+    text-shadow:0 0 15px #00ffff;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#00ffff;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:4rem;
+    line-height:1.2;
+    color:white;
+    text-shadow:
+    0 0 10px #00ffff,
+    0 0 30px #00ffff;
+}
+
+.hero h1 span{
+    color:#ff00ff;
+    text-shadow:
+    0 0 10px #ff00ff,
+    0 0 30px #ff00ff;
+}
+
+.hero p{
+    margin-top:25px;
+    font-size:1.2rem;
+    color:#cccccc;
+}
+
+.buttons{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 35px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight:bold;
+    transition:0.3s;
+    text-decoration:none;
+}
+
+.btn-primary{
+    background:#00ffff;
+    color:#000;
+    box-shadow:0 0 20px #00ffff;
+}
+
+.btn-primary:hover{
+    transform:scale(1.08);
+}
+
+.btn-secondary{
+    background:#ff00ff;
+    color:white;
+    box-shadow:0 0 20px #ff00ff;
+}
+
+.btn-secondary:hover{
+    transform:scale(1.08);
+}
+
+/* SERVICIOS */
+
+.section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-family:'Orbitron',sans-serif;
+    font-size:3rem;
+    margin-bottom:60px;
+    color:#00ffff;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#10182b;
+    border:1px solid #00ffff33;
+    border-radius:20px;
+    padding:35px;
+    transition:0.3s;
+    box-shadow:0 0 20px #000;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#ff00ff;
+    box-shadow:0 0 25px #ff00ff66;
+}
+
+.card h3{
+    margin-top:20px;
+    margin-bottom:15px;
+    color:#00ffff;
+}
+
+.card p{
+    color:#cccccc;
+}
+
+.icon{
+    font-size:3rem;
+}
+
+/* GALERÍA */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:20px;
+    border:2px solid #00ffff44;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 25px #00ffff99;
+}
+
+/* TÉCNICOS */
+
+.techs{
+    text-align:center;
+    line-height:2.2;
+    font-size:1.1rem;
+    color:#cccccc;
+}
+
+/* CONTACTO */
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin-top:15px;
+    color:#cccccc;
+}
+
+.contact a{
+    color:#00ffff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    padding:30px;
+    text-align:center;
+    border-top:1px solid #00ffff33;
+    margin-top:50px;
+    color:#888;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+.section-title{
+    font-size:2rem;
+}
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+    <div class="logo">R&G SOLUTIONS TI</div>
+
+    <ul>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#tecnicos">Técnicos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            SOPORTE TÉCNICO <br>
+            <span>GAMER & PROFESIONAL</span>
+        </h1>
+
+        <p>
+            Instalación, optimización y mantenimiento de equipo de cómputo,
+            impresoras y venta de periféricos gamer y oficina.
+        </p>
+
+        <div class="buttons">
+
+             <a href="https://wa.me/5210000000000" class="btn btn-primary">
+                WhatsApp
+            </a>
+  
+            <a href="#contacto" class="btn btn-primary">
+                Contacto
+            </a>
+
+            <a href="#servicios" class="btn btn-secondary">
+                Ver Servicios
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SERVICIOS -->
+
+<section class="section" id="precios">
+
+    <h2 class="section-title">CATÁLOGO DE PRECIOS</h2>
+
+    <div style="overflow-x:auto;">
+
+    <table style="
+        width:100%;
+        border-collapse:collapse;
+        background:#10182b;
+        border-radius:20px;
+        overflow:hidden;
+        box-shadow:0 0 20px #000;
+    ">
+
+        <thead style="background:#00ffff; color:black;">
+
+            <tr>
+
+                <th style="padding:20px;">Servicio</th>
+
+                <th style="padding:20px;">
+                    Zona Cercana
+                </th>
+
+                <th style="padding:20px;">
+                    Visita Extendida
+                </th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td style="padding:18px; border-bottom:1px solid #ffffff22;">
+                    Diagnóstico
+                </td>
+
+                <td style="padding:18px; border-bottom:1px solid #ffffff22;">
+                    $150 
+                </td>
+
+                <td style="padding:18px; border-bottom:1px solid #ffffff22;">
+                    $300 
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding:18px; border-bottom:1px solid #ffffff22;">
+                    Mantenimiento PC
+                </td>
+
+                <td style="padding:18px; border-bottom:1px solid #ffffff22;">
+                    $400 
+                </td>
+
+                <td style="padding:18px; border-bottom:1px solid #ffffff22;">
+                    $700 
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding:18px; border-bottom:1px solid #ffffff22;">
+                    Mantenimiento Laptop
+                </td>
+
+                <td style="padding:18px; border-bottom:1px solid #ffffff22;">
+                    $500 
+                </td>
+
+                <td style="padding:18px; border-bottom:1px solid #ffffff22;">
+                    $800 
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding:18px; border-bottom:1px solid #ffffff22;">
+                    Cambio de Pasta Térmica
+                </td>
+
+                <td style="padding:18px; border-bottom:1px solid #ffffff22;">
+                    $250 
+                </td>
+
+                <td style="padding:18px; border-bottom:1px solid #ffffff22;">
+                    $500 
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding:
+
+<section class="section" id="servicios">
+
+    <h2 class="section-title">SERVICIOS</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Mantenimiento</h3>
+            <p>
+                Limpieza profunda, cambio de pasta térmica
+                y optimización de laptops y PCs.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚡</div>
+            <h3>Upgrade SSD & RAM</h3>
+            <p>
+                Aumenta la velocidad y rendimiento
+                de tu equipo.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🖨️</div>
+            <h3>Impresoras</h3>
+            <p>
+                Instalación, configuración y diagnóstico
+                profesional.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎮</div>
+            <h3>Periféricos</h3>
+            <p>
+                Venta e instalación de periféricos
+                gamer y oficina.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GALERÍA -->
+
+<section class="section" id="galeria">
+
+    <h2 class="section-title">GALERÍA</h2>
+
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?q=80&w=1200&auto=format&fit=crop" alt="">
+
+    </div>
+
+</section>
+
+<!-- TÉCNICOS -->
+
+<section class="section" id="tecnicos">
+
+    <h2 class="section-title">TÉCNICOS</h2>
+
+    <div class="techs">
+
+        <p>🛠️ Antonio Armando Geuguer Chavez</p>
+        <p>🛠️ Ricardo Velasco Gamboa</p>
+        <p>🛠️ Johan Alexis Cortés Sánchez</p>
+
+    </div>
+
+</section>
+
+<!-- CONTACTO -->
+
+<section class="section contact" id="contacto">
+
+    <h2 class="section-title">CONTACTO</h2>
+
+    <p>📍 Servicio en CDMX y alrededores</p>
+
+    <p>
+        📞 WhatsApp:
+        <a href="https://wa.me/525624199056">
+            56 2419 9056
+        </a>
+    </p>
+
+    <p>📧 rgsolutionsti@correo.com</p>
+
+</section>
+
+<footer>
+    © 2026 R&G Solutions TI | Soporte Técnico Gamer
+</footer>
+
+</body>
+</html>
